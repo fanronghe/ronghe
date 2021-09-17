@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>game-airwar</artifactId>
+        <groupId>com.ronghe</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>interface</artifactId>
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+    </properties>
+
+    <!--scope:provided使用场景:非"整合项目(聚合项目的合并项目)"
+    使用别的项目中的资源,其实最终确实在整合项目中资源都是互通的,
+    这里的依赖是一个整合项目提供过来的依赖,而不是在此处添加的新依赖,
+    仅仅为了编译可以通过-->
+    <dependencies>
+        <dependency>
+            <groupId>com.ronghe</groupId>
+            <artifactId>world</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+
+</project>

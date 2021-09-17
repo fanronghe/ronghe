@@ -2,7 +2,14 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/game-airwar/entity/entity.iml" filepath="$PROJECT_DIR$/game-airwar/entity/entity.iml" />
+      <module fileurl="file://$PROJECT_DIR$/game-airwar/game-airwar.iml" filepath="$PROJECT_DIR$/game-airwar/game-airwar.iml" />
+      <module fileurl="file://$PROJECT_DIR$/game-airwar/interface/interface.iml" filepath="$PROJECT_DIR$/game-airwar/interface/interface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/game-airwar/interface2/interface2.iml" filepath="$PROJECT_DIR$/game-airwar/interface2/interface2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/game-airwar/main/main.iml" filepath="$PROJECT_DIR$/game-airwar/main/main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/game-airwar/resources/resources.iml" filepath="$PROJECT_DIR$/game-airwar/resources/resources.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/ronghe.iml" filepath="$PROJECT_DIR$/.idea/ronghe.iml" />
+      <module fileurl="file://$PROJECT_DIR$/game-airwar/world/world.iml" filepath="$PROJECT_DIR$/game-airwar/world/world.iml" />
     </modules>
   </component>
 </project>
