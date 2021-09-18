@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<servlets>
+    <servlet id="GET/user" className="com.fan.servlet.impl.UserController" />
+    <servlet id="DELETE/user" className="com.fan.servlet.impl.UserController" />
+    <servlet id="POST/user" className="com.fan.servlet.impl.UserController" />
+    <servlet id="PUT/user" className="com.fan.servlet.impl.UserController" />
+
+    <servlet id="GET/item" className="com.fan.servlet.impl.ItemController" />
+    <servlet id="DELETE/item" className="com.fan.servlet.impl.ItemController" />
+    <servlet id="POST/item" className="com.fan.servlet.impl.ItemController" />
+    <servlet id="PUT/item" className="com.fan.servlet.impl.ItemController" />
+
+
+    <servlet id="POST/login" className="com.fan.servlet.impl.LoginController" />
+</servlets>

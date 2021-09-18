@@ -4,7 +4,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.ronghe</groupId>
+    <!--依赖的组id是可以直接在pom文件中独立更改的,与其他项目设置是解耦的
+    改完只需再把引用这个项目依赖的地方同样改一下组id即可-->
+    <groupId>com.ronghe.game-airwar</groupId>
     <artifactId>game-airwar</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>

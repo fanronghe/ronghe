@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: webserver-spring-web-version
+
+server:
+  port: 20000

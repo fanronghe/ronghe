@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>webserver-lili</artifactId>
+        <groupId>com.ronghe.webserver-lili</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>webserver-spring-web-version</artifactId>
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+    </properties>
+
+    <!--由于一个pom中只有一个parent标签
+    该标签相当于parent标签-->
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>2.5.4</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <!--依赖左边图案是的继承标识图案,有了它就不用自己写依赖版本号了,
+    统一从spring-boot-dependencies文件中获取
+    Maven工具中的DownloadSources可以将总工程中的任何所有的源码下载下来,
+    而不是单个依赖的源码,或某个文件的源码,是所有依赖的源码都会下载下来,
+    spring-boot-starter-web依赖中包括了spring-boot-starter依赖,
+    而spring-boot-starter依赖提供了@SpringBootApplication使得
+    整个项目变为了一个SpringBoot项目了-->
+    <dependencies>
+        <dependency>
+            <!--spring-boot-starter-web包括,
+            spring-boot-starter,支持本项目是一个SpringBoot项目,
+            spring-boot-starter-tomcat,提供javax.servlet.http包下的HttpServletRequest和HttpServletResponse请求对象和响应对象
+            spring-boot-starter-json,
+            spring-web,
+            spring-webmvc-->
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <!--提供了@Test5注解-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+
+    <!--备用,给打包插件用的 依赖会从dependencyManagement标签中继承
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.5.4</version>
+        <relativePath/>
+    </parent>
+    -->
+    <!--在聚合项目打包时很好用,一般SpringBoot应用总项目都要加上这个打包插件
+    可以在本项目打包时把所有依赖的jar包放入lib文件夹中
+    然后本项目打出的jar包是一个可执行jar包,不会缺少别的依赖的jar包-->
+<!--    <build>-->
+<!--        <plugins>-->
+<!--            <plugin>-->
+<!--                <groupId>org.springframework.boot</groupId>-->
+<!--                <artifactId>spring-boot-maven-plugin</artifactId>-->
+<!--            </plugin>-->
+<!--        </plugins>-->
+<!--    </build>-->
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>repackage</id>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <!--主启动类的路径-->
+                    <mainClass>com.fan.SpringBootRun</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+
+
+</project>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>用POST方式提交表格形式的参数</title>
+	</head>
+	<body>
+		<!--带有/说明是一个绝对路径,不带/是相对路径-->
+		<form action="/login" method="post">
+			<table>
+				<tr>
+					<td>
+						名称: <input type="text" name="username">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						密码: <input type="password" name="password">
+					</td>
+				</tr>
+			</table>
+			
+			<input type="submit" value="POST提交"/>
+		</form>
+	</body>
+</html>

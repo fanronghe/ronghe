@@ -9,6 +9,9 @@
       <module fileurl="file://$PROJECT_DIR$/game-airwar/main/main.iml" filepath="$PROJECT_DIR$/game-airwar/main/main.iml" />
       <module fileurl="file://$PROJECT_DIR$/game-airwar/resources/resources.iml" filepath="$PROJECT_DIR$/game-airwar/resources/resources.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/ronghe.iml" filepath="$PROJECT_DIR$/.idea/ronghe.iml" />
+      <module fileurl="file://$PROJECT_DIR$/webserver-lili/webserver/webserver.iml" filepath="$PROJECT_DIR$/webserver-lili/webserver/webserver.iml" />
+      <module fileurl="file://$PROJECT_DIR$/webserver-lili/webserver-lili.iml" filepath="$PROJECT_DIR$/webserver-lili/webserver-lili.iml" />
+      <module fileurl="file://$PROJECT_DIR$/webserver-lili/webserver-spring-web-version/webserver-spring-web-version.iml" filepath="$PROJECT_DIR$/webserver-lili/webserver-spring-web-version/webserver-spring-web-version.iml" />
       <module fileurl="file://$PROJECT_DIR$/game-airwar/world/world.iml" filepath="$PROJECT_DIR$/game-airwar/world/world.iml" />
     </modules>
   </component>
