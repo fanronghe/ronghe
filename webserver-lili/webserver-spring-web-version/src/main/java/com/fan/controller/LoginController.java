@@ -28,7 +28,7 @@ public class LoginController {
      * @param response 响应对象
      */
     @PostMapping( "/login" )
-    public void login( HttpServletRequest request, HttpServletResponse response ){
+    public void login( HttpServletRequest request, HttpServletResponse response ) {
 
         System.out.println( "请求方式:" + request.getMethod() );
         System.out.println( "请求路径:" + request.getRequestURI() );
@@ -39,10 +39,11 @@ public class LoginController {
         System.out.println( "消息头session:" + request.getHeader( "session" ) );
         System.out.println( "消息头cookie:" + request.getHeader( "cookie" ) );
 
-        //==================================@RquestBody开始工作==========================================================
+        //==================================手动模拟@RquestBody开始工作==================================================
         //下面的过程用来模拟@RquestBody注解,将消息正文中的json字符串,转为Map<String,String>对象的过程
         Map<String, String> map_body = new HashMap<>();
         try {
+            //当使用@RequesBody功能后会关闭流(Stream closed),此时获取的流就不可用了,所以二者是互斥的
             InputStream in = request.getInputStream();
             byte[] contentData = new byte[request.getContentLength()]; //直接为消息正文量身定制一个等容量的字节数组空间
             in.read( contentData ); //在刚开辟的字节数组空间中填入数据,即消息正文的数据
@@ -63,6 +64,14 @@ public class LoginController {
         System.out.println( "消息正文number:" + map_body.get( "number" ) );
 
 
+        Map<String, String> map = new HashMap<>();
+        map.put( "code", "200" );
+        map.put( "message", "ok" );
+        map.put( "data", "这里是LILI服务器" );
+
+
+        //===================================手动模拟@ResponseBody开始工作================================================
+        //以下过程模拟@ResponseBody注解将对象转为json字符串的过程
         response.setContentType( "application/json" );
         response.setCharacterEncoding( "utf-8" );
         response.setHeader( "token", "123456" );
@@ -72,13 +81,6 @@ public class LoginController {
         } catch ( IOException e ) {
             e.printStackTrace();
         }
-
-        //===================================@ResponseBody开始工作=======================================================
-        //以下过程模拟@ResponseBody注解将对象转为json字符串的过程
-        Map<String, String> map = new HashMap<>();
-        map.put( "code", "200" );
-        map.put( "message", "ok" );
-        map.put( "data", "这里是LILI服务器" );
         /**
          * new ObjectMapper().writeValueAsString( Object o ) 该方法是将一切对象转为json,是万能工具
          * 其中Object包括 List Map Student等一切对象
@@ -90,10 +92,10 @@ public class LoginController {
             e.printStackTrace();
         }
         pw.flush();
-        //===================================@ResponseBody结束工作=======================================================
-
+        //===================================手动模拟@ResponseBody结束工作================================================
 
         return;
+
     }
 
 }

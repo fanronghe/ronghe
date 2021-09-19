@@ -135,7 +135,7 @@ public class HttpServletResponseImpl implements HttpServletResponse {
         //确保entity始终不为null,至少又一个404页面兜底,但又不会干扰到正常页面的响应
         if( entity == null ){
             setStatus( 404 ); //只有当无法定位数据源(内存或文件)的情况下,会报404页面
-            setEntity( "404.html" );
+            setEntity( "404.html" ); //这里必须可以定位到该文件,否则entity依然为null
         }
 
 
@@ -211,6 +211,7 @@ public class HttpServletResponseImpl implements HttpServletResponse {
     public void setEntity( String filePath ) {
         //这里使用相对目录,即在jar包的同级目录下应该准备一个static文件夹,里面存放静态资源文件,就不适用jar包中的文件了
         //相对目录不用前面不用加/
+        //相对路径必须配合Working Directory工作,jar包的Working Directory就是jar包所在的目录
         File file = new File( "static/" + filePath ); //最后加上/提供兼容性,也就是filePath前面加不加/都行
         if( file.exists() && file.isFile() ){ //只有在该路径定位的是一个文件,且该文件存在的条件下,entity才不为null
             entity = file;
